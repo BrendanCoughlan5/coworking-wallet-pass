@@ -1,0 +1,11 @@
+{
+  "name": "coworking-wallet-pass",
+  "version": "1.0.0",
+  "description": "Pretend coworking pass for Google Wallet (Generic pass, signed JWT, no dependencies)",
+  "type": "module",
+  "scripts": {
+    "pass": "node --env-file=.env generate-pass.mjs"
+  },
+  "engines": { "node": ">=20.6" },
+  "license": "MIT"
+}
