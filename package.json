@@ -4,8 +4,8 @@
   "description": "Pretend coworking pass for Google Wallet (Generic pass, signed JWT, no dependencies)",
   "type": "module",
   "scripts": {
-    "pass": "node --env-file=.env generate-pass.mjs"
+    "pass": "node generate-pass.mjs"
   },
-  "engines": { "node": ">=20.6" },
+  "engines": { "node": ">=18" },
   "license": "MIT"
 }

@@ -22,7 +22,7 @@ you just need a Wallet issuer ID and a service account key.
 
 ```bash
 cp .env.example .env     # then edit ISSUER_ID and MEMBER_NAME
-npm run pass             # needs Node 20.6+
+npm run pass             # Node 18+
 ```
 
 It prints a `https://pay.google.com/gp/v/save/...` link (also written to `save-link.txt`).

@@ -1,8 +1,16 @@
 // Generates an "Add to Google Wallet" link for a fake coworking pass.
 // Uses a Generic pass with the class + object embedded in the signed JWT,
 // so no Wallet API calls are needed -- just an issuer ID and a service account key.
-import { readFileSync, writeFileSync } from 'node:fs';
+import { existsSync, readFileSync, writeFileSync } from 'node:fs';
 import { createSign, randomUUID } from 'node:crypto';
+
+// Minimal .env loader so this runs on Node 18 (no --env-file needed).
+if (existsSync('.env')) {
+  for (const line of readFileSync('.env', 'utf8').split('\n')) {
+    const m = line.match(/^\s*([A-Z_]+)\s*=\s*(.*?)\s*$/);
+    if (m && !(m[1] in process.env)) process.env[m[1]] = m[2];
+  }
+}
 
 const issuerId = process.env.ISSUER_ID;
 const keyPath = process.env.SERVICE_ACCOUNT_KEY || './keys/service-account.json';
